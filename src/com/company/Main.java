@@ -1,13 +1,12 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.sql.Array;
+import java.util.*;
 
 public class Main {
     public static Scanner scan = new Scanner(System.in);
     public static List<String> oper = new ArrayList();
-    public static List<Integer> number = new ArrayList();
+    public static ArrayDeque<Integer> number = new ArrayDeque();
 
     public static Boolean isNumeric(String str) {
         try {
@@ -22,7 +21,7 @@ public class Main {
         String[] symbols = input.split(" ");
         for(String s : symbols){
             if(isNumeric(s)==true){
-                number.add(Integer.parseInt(s));
+                number.addLast(Integer.parseInt(s));
             }else{
                 oper.add(s);
             }
