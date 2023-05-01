@@ -1,6 +1,5 @@
 package com.company;
 
-import java.sql.Array;
 import java.util.*;
 
 public class Main {
@@ -16,16 +15,23 @@ public class Main {
             return false;
         }
     }
-    public static void twoArray (){
+
+    public static void twoArray() {
         String input = scan.nextLine();
         String[] symbols = input.split(" ");
-        for(String s : symbols){
-            if(isNumeric(s)==true){
+        for (String s : symbols) {
+            if (isNumeric(s) == true) {
                 number.addLast(Integer.parseInt(s));
-            }else{
+            } else {
                 oper.add(s);
             }
 
+        }
+        for (int n : number) {
+            System.out.print(n);
+        }
+        for (String n : oper) {
+            System.out.print(n);
         }
     }
 
@@ -33,12 +39,5 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Введите математическую запись");
         twoArray();
-         for(int n : number){
-             System.out.print(n);
-         }
-        for(String n : oper){
-            System.out.print(n);
-        }
-
     }
 }
